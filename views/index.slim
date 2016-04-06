@@ -1,0 +1,22 @@
+.page-header
+  h1
+    a href="#{@rss.link}"
+      = @rss.title
+.row
+  .col-md-2
+    h2 Saved
+    - @favs.each do |row|
+      a.saved_item href="#{row[:link]}" target="_blank"
+        = row[:title]
+  .col-md-10
+    - @rss.items.each do |item|
+      .feed_item data-title="#{item.title}" data-link="#{item.link}"
+        h2.feed_item-title
+          = item.title
+          / This if check isn't good
+          - if @favs.to_hash(:title).has_key? item.title
+            small.feed_item.unsave-btn.btn.btn-info Saved
+          -else
+            small.feed_item.save-btn.btn.btn-success Save
+        .feed_item-content
+          == item.content_encoded

@@ -7,6 +7,7 @@ GEM
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
+    sequel (4.33.0)
     shotgun (0.9.1)
       rack (>= 1.0)
     simple-rss (1.3.1)
@@ -14,6 +15,11 @@ GEM
       rack (~> 1.5)
       rack-protection (~> 1.4)
       tilt (>= 1.3, < 3)
+    slim (3.0.2)
+      temple (~> 0.7.3)
+      tilt (>= 1.3.3, < 2.1)
+    sqlite3 (1.3.11)
+    temple (0.7.5)
     thin (1.6.4)
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0, >= 1.0.4)
@@ -25,9 +31,12 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
+  sequel
   shotgun
   simple-rss
   sinatra
+  slim
+  sqlite3
   thin
 
 BUNDLED WITH
