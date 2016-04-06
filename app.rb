@@ -33,9 +33,9 @@ delete '/api/fav' do
   begin
     fav.where(title: params["title"], link: params[:link]).delete
   rescue
-    [400, { message: "Could not delete article" }.to_json]
+    [400, { message: "Could not unsave article" }.to_json]
   else
-    [200, { message: "Article Deleted" }.to_json]
+    [200, { message: "Article Unsaved" }.to_json]
   end
 
 end
