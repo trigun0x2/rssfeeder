@@ -5,11 +5,15 @@ gem 'thin'
 gem 'simple-rss'
 gem 'slim'
 gem 'sequel'
-gem 'sqlite3'
 
 group :development do
   gem 'awesome_print'
   gem 'shotgun'
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
 end
 
 group :test do

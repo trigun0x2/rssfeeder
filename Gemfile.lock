@@ -4,6 +4,7 @@ GEM
     awesome_print (1.6.1)
     daemons (1.2.3)
     eventmachine (1.2.0.1)
+    pg (0.18.4)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -31,6 +32,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
+  pg
   sequel
   shotgun
   simple-rss
