@@ -1,3 +1,7 @@
-.feed_item-save-btn {
+.feed_item-action {
   margin-left: 10px;
+}
+
+.saved_item {
+  display: block;
 }

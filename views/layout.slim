@@ -7,10 +7,14 @@ html
     rel="stylesheet"
     integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
     crossorigin="anonymous"]
+    link [
+    href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"
+    rel="stylesheet"]
     link href="/css/app.css" rel="stylesheet"
     meta name="viewport" content="width=device-width, initial-scale=1"
   body
     .container
       == yield
     script src="//code.jquery.com/jquery-2.2.3.min.js"
+    script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"
     script src="/js/app.js"
