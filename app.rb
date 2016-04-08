@@ -5,8 +5,12 @@ require 'slim'
 require 'sequel'
 require 'json'
 
-before do 
-  DB = Sequel.connect(ENV['DATABASE_URL'] || "sqlite://feed.db")
+before do
+  if ENV['RACK_ENV'] != 'test'
+    DB = Sequel.connect(ENV['DATABASE_URL'] || "sqlite://feed.db")
+  else
+    DB = Sequel.connect("sqlite://feed_test.db")
+  end
 end
 
 get '/' do
@@ -23,6 +27,7 @@ post '/api/fav' do
   rescue
     [400, { message: "Could not save article" }.to_json]
   else
+    # This should return the actual object
     [200, { message: "Article saved" }.to_json]
   end
 end
@@ -35,7 +40,8 @@ delete '/api/fav' do
   rescue
     [400, { message: "Could not unsave article" }.to_json]
   else
-    [200, { message: "Article Unsaved" }.to_json]
+    # This should return the actual object
+    [200, { message: "Article unsaved" }.to_json]
   end
 
 end
